@@ -113,4 +113,18 @@ public class GuessNumberTest {
         //then
         Assert.assertEquals("0A4B 4 numbers position wrong",result);
     }
+    @Test
+    public void should_return_3A0B_when_CountGuessResult_given_1235_answer_1234() throws IOException {
+        //given
+        String[] input={"1","2","3","5"};
+        List<Integer> answer = new ArrayList<Integer>();
+        answer.add(1);
+        answer.add(2);
+        answer.add(3);
+        answer.add(4);
+        //when
+        String result = CountGuessResult.CountResult(input,answer);
+        //then
+        Assert.assertEquals("3A0B 1and2and3correct",result);
+    }
 }

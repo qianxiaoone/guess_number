@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class GuessInputCommand {
     private BufferedReader bufferedReader;
 
-    public void GuessInput() {
+    public GuessInputCommand() {
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     }
 

@@ -44,7 +44,7 @@ public class GuessNumberTest {
         Assert.assertEquals(4,result.size());
     }
     @Test
-    public void should_return_win_when_CountGuessResult_given_1234() throws IOException {
+    public void should_return_win_when_CountGuessResult_given_1234_answer_1234() throws IOException {
         //given
         String[] input={"1","2","3","4"};
         List<Integer> answer = new ArrayList<Integer>();
@@ -56,5 +56,19 @@ public class GuessNumberTest {
         String result = CountGuessResult.CountResult(input,answer);
         //then
         Assert.assertEquals("4A0B win, all correct",result);
+    }
+    @Test
+    public void should_return_allwrong_when_CountGuessResult_given_5678_answer_1234() throws IOException {
+        //given
+        String[] input={"5","6","7","8"};
+        List<Integer> answer = new ArrayList<Integer>();
+        answer.add(1);
+        answer.add(2);
+        answer.add(3);
+        answer.add(4);
+        //when
+        String result = CountGuessResult.CountResult(input,answer);
+        //then
+        Assert.assertEquals("0A0B all wrong",result);
     }
 }

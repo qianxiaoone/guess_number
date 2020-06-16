@@ -26,11 +26,11 @@ public class CountGuessResult {
         }else if(a == 0 && b == 0) {
             result = "all wrong";
         }else if(a == 0 && b != 0){
-            result = bs.substring(0,bs.length() - 1) + "wrong position";
+            result = bs.substring(0,bs.length() - 3) + "wrong position";
         }else if (b == 0 && a != 0) {
-            result = as.substring(0,as.length() - 1) + "correct";
+            result = as.substring(0,as.length() - 3) + "correct";
         }else{
-            result = as.substring(0,as.length() - 1) + "correct" + "，" + bs.substring(0,bs.length() - 1) + "wrong position";
+            result = as.substring(0,as.length() - 3) + "correct" + "，" + bs.substring(0,bs.length() - 3) + "wrong position";
         }
         return a+"A"+b+"B"+" "+result;
 

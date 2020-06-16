@@ -86,6 +86,20 @@ public class GuessNumberTest {
         Assert.assertEquals("2A2B 1and2correct，4and3wrong position",result);
     }
     @Test
+    public void should_return_0A3B_when_CountGuessResult_given_5321_answer_1234() throws IOException {
+        //given
+        String[] input={"5","3","2","1"};
+        List<Integer> answer = new ArrayList<Integer>();
+        answer.add(1);
+        answer.add(2);
+        answer.add(3);
+        answer.add(4);
+        //when
+        String result = CountGuessResult.CountResult(input,answer);
+        //then
+        Assert.assertEquals("0A3B 3and2and1wrong position",result);
+    }
+    @Test
     public void should_return_0A4B_when_CountGuessResult_given_4321_answer_1234() throws IOException {
         //given
         String[] input={"4","3","2","1"};

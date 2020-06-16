@@ -12,25 +12,25 @@ public class CountGuessResult {
         for (int i = 0; i < inputs.length; i++) {
             if (gameAnswer.get(i).equals(Integer.valueOf(inputs[i]))) {
                 a++;
-                as = as + inputs[i] + "和";
+                as = as + inputs[i] + "and";
             }else if (gameAnswer.contains(Integer.valueOf(inputs[i]))) {
                 b++;
-                bs = bs + inputs[i] + "和";
+                bs = bs + inputs[i] + "and";
             }//s = s.Substring(0,s.Length - 1)
         }
         if (a == 4) {
-            result = "胜利，一切正确";
+            result = "win, all correct";
 
         }else if (b == 4) {
-            result = "4个数字位置错误";
+            result = "4 numbers position wrong";
         }else if(a == 0 && b == 0) {
-            result = "都错了";
+            result = "all wrong";
         }else if(a == 0 && b != 0){
-            result = bs.substring(0,bs.length() - 1) + "错误的位置";
+            result = bs.substring(0,bs.length() - 1) + "wrong position";
         }else if (b == 0 && a != 0) {
-            result = as.substring(0,as.length() - 1) + "正确";
+            result = as.substring(0,as.length() - 1) + "correct";
         }else{
-            result = as.substring(0,as.length() - 1) + "正确" + "，" + bs.substring(0,bs.length() - 1) + "错误的位置";
+            result = as.substring(0,as.length() - 1) + "correct" + "，" + bs.substring(0,bs.length() - 1) + "wrong position";
         }
         return a+"A"+b+"B"+" "+result;
 

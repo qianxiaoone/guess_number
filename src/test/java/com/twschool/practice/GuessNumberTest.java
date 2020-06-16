@@ -25,7 +25,7 @@ public class GuessNumberTest {
         //when
         String output = CheckInputFormat.checkInput(input);
         //then
-        Assert.assertEquals("输入错误，再次输入",output);
+        Assert.assertEquals("Wrong Input，Input again",output);
     }
     @Test
     public void should_return_fourNumber_when_GenerateGameAnswer(){

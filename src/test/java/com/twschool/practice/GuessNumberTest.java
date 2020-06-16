@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,5 +42,19 @@ public class GuessNumberTest {
         Set result = new HashSet(output);
         //then
         Assert.assertEquals(4,result.size());
+    }
+    @Test
+    public void should_return_win_when_CountGuessResult_given_1234() throws IOException {
+        //given
+        String[] input={"1","2","3","4"};
+        List<Integer> answer = new ArrayList<Integer>();
+        answer.add(1);
+        answer.add(2);
+        answer.add(3);
+        answer.add(4);
+        //when
+        String result = CountGuessResult.CountResult(input,answer);
+        //then
+        Assert.assertEquals("4A0B win, all correct",result);
     }
 }
